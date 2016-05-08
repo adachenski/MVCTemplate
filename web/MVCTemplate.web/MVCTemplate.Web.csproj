@@ -185,8 +185,6 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
-    <Compile Include="ViewModels\ApplicationDbContext.cs" />
-    <Compile Include="ViewModels\ApplicationUser.cs" />
     <Compile Include="ViewModels\Mange\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Mange\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Mange\ConfigureTwoFactorViewModel.cs" />
@@ -264,6 +262,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\data\MVCTemplate.Data.Common\MVCTemplate.Data.Common.csproj">
+      <Project>{01560f0a-ffbb-4631-b626-79db0ade8dd7}</Project>
+      <Name>MVCTemplate.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\data\MVCTemplate.Data.Model\MVCTemplate.Data.Model.csproj">
+      <Project>{b20b31e1-1f43-4d3d-bffd-aaf61693937c}</Project>
+      <Name>MVCTemplate.Data.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\data\MVCTemplate.Data\MVCTemplate.Data.csproj">
+      <Project>{8b0d2039-91b5-4598-920c-cc7dbd6fd9f2}</Project>
+      <Name>MVCTemplate.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

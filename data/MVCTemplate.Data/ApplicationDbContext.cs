@@ -1,6 +1,7 @@
-﻿namespace MVCTemplate.Web.ViewModels
+﻿namespace MVCTemplate.Data
 {
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

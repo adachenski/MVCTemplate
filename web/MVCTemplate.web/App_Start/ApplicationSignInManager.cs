@@ -6,7 +6,7 @@
     using Microsoft.Owin;
     using Microsoft.Owin.Security;
     using ViewModels;
-
+    using Data.Models;
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {
         public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)

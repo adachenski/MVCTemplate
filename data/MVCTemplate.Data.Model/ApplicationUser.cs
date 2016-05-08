@@ -1,4 +1,4 @@
-﻿namespace MVCTemplate.Web.ViewModels
+﻿namespace MVCTemplate.Data.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations.Schema;

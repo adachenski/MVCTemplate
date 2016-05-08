@@ -12,7 +12,7 @@
     using Microsoft.Owin.Security;
     using MVCTemplate.Web.ViewModels.Account;
     using ViewModels;
-
+    using Data.Models;
     [Authorize]
     public class AccountController : Controller
     {
