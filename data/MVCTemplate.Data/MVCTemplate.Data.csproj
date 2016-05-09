@@ -58,6 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201605091722239_InitialCreate2.cs" />
+    <Compile Include="Migrations\201605091722239_InitialCreate2.Designer.cs">
+      <DependentUpon>201605091722239_InitialCreate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,10 +70,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MVCTemplate.Data.Common\MVCTemplate.Data.Common.csproj">
+      <Project>{01560f0a-ffbb-4631-b626-79db0ade8dd7}</Project>
+      <Name>MVCTemplate.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MVCTemplate.Data.Model\MVCTemplate.Data.Model.csproj">
       <Project>{b20b31e1-1f43-4d3d-bffd-aaf61693937c}</Project>
       <Name>MVCTemplate.Data.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605091722239_InitialCreate2.resx">
+      <DependentUpon>201605091722239_InitialCreate2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
