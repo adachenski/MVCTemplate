@@ -15,26 +15,26 @@
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
 
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
-                                        {
-                                            AllowOnlyAlphanumericUserNames = false,
-                                            RequireUniqueEmail = true
-                                        };
+            {
+                AllowOnlyAlphanumericUserNames = false,
+                RequireUniqueEmail = true
+            };
 
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
-                                            {
-                                                RequiredLength = 6,
-                                                RequireNonLetterOrDigit = false,
-                                                RequireDigit = false,
-                                                RequireLowercase = false,
-                                                RequireUppercase = false,
-                                            };
+            {
+                RequiredLength = 6,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
+            };
 
             // Configure user lockout defaults
             manager.UserLockoutEnabledByDefault = true;
@@ -49,16 +49,16 @@
             manager.RegisterTwoFactorProvider(
                 "Email Code",
                 new EmailTokenProvider<ApplicationUser>
-                    {
-                        Subject = "Security Code",
-                        BodyFormat = "Your security code is {0}"
-                    });
+                {
+                    Subject = "Security Code",
+                    BodyFormat = "Your security code is {0}"
+                });
             manager.EmailService = new EmailService();
             manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
+                manager.UserTokenProvider =
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
 
