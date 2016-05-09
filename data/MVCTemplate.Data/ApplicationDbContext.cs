@@ -2,6 +2,7 @@
 {
     using Common.Models;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Model;
     using Models;
     using System;
     using System.Data.Entity;
@@ -18,6 +19,11 @@
         {
             return new ApplicationDbContext();
         }
+
+        public IDbSet<Joke> Jokes { get; set; }
+
+        public IDbSet<JokeCategory> JokesCategories { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();

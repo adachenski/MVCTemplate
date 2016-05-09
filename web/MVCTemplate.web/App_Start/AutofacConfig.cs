@@ -1,11 +1,12 @@
 ﻿namespace MVCTemplate.Web.App_Start
 {
-    using Autofac;
-    using Autofac.Integration.Mvc;
     using System.Reflection;
     using System.Web.Mvc;
-    using System;
-    using System.Diagnostics;
+    using Autofac;
+    using Autofac.Integration.Mvc;
+    using Data;
+    using Data.Common;
+    using System.Data.Entity;
     public static class AutofacConfig
     {
         public static void RegisterAutofac()
@@ -38,8 +39,12 @@
 
         private static void RegisterServices(ContainerBuilder builder)
         {
-           // builder.Register(x=>new Service()).As<IService>().InstancePerRequest();
-        }
+            // builder.Register(x=>new Service()).As<IService>().InstancePerRequest();
+            builder.Register(x => new ApplicationDbContext())
+                .As<DbContext>().InstancePerRequest();
 
+            builder.RegisterGeneric(typeof(DbRepository<>))
+                .As(typeof(IDbRepository<>)).InstancePerRequest();
+        }
     }
 }
