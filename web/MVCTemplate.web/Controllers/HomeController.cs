@@ -1,11 +1,11 @@
-﻿using MVCTemplate.Data;
+﻿using AutoMapper.QueryableExtensions;
+using MVCTemplate.Data;
 using MVCTemplate.Data.Common;
 using MVCTemplate.Data.Model;
+using MVCTemplate.Web.Infrastructure.Mapping;
+using MVCTemplate.Web.ViewModels.Home;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using static MVCTemplate.Web.App_Start.AutofacConfig;
 
@@ -48,14 +48,22 @@ namespace MVCTemplate.Web.Controllers
 
         public ActionResult Index()
         {
-            // Trace.WriteLine("Nasko is in Home ");
+            // Trace.WriteLine("Nasko is in Home "); //Shows info in Glimple Trace bar
             // var db = new ApplicationDbContext();
             // var userCount = db.Users.Count();
 
-            // Take 3 random jokes
-            var jokes = this.jokes.All().OrderBy(x => Guid.NewGuid()).Take(3);
+            // Take 3 random jokes no AutoMapper
+            // var jokes = this.jokes.All().OrderBy(x => Guid.NewGuid())
+            //     .Take(3).Select(x => new JokeViewModel() { Content = x.Content }).ToList();
 
-            return this.View(jokes);
+            // Take 3 random jokes with AutoMapper
+            // var jokes2 = this.jokes.All().OrderBy(x => Guid.NewGuid())
+            //     .Take(3).ProjectTo<JokeViewModel>(AutoMapperConfig.Configuration).ToList();
+
+            // Take 3 jokes after makeing IQueriable extensions (overridind ProjectTo from AtoMapper)
+            var jokes3 = this.jokes.All().OrderBy(x => Guid.NewGuid()).Take(3)
+                .To<JokeViewModel>().ToList();
+            return this.View(jokes3);
         }
     }
 }
