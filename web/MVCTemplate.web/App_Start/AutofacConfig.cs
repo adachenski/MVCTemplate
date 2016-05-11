@@ -7,6 +7,7 @@
     using Data;
     using Data.Common;
     using System.Data.Entity;
+    using Services.Data;
     public static class AutofacConfig
     {
         public static void RegisterAutofac()
@@ -42,6 +43,9 @@
             // builder.Register(x=>new Service()).As<IService>().InstancePerRequest();
             builder.Register(x => new ApplicationDbContext())
                 .As<DbContext>().InstancePerRequest();
+
+            var servicesAssembly = Assembly.GetAssembly(typeof(IJokeService));
+            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
 
             builder.RegisterGeneric(typeof(DbRepository<>))
                 .As(typeof(IDbRepository<>)).InstancePerRequest();

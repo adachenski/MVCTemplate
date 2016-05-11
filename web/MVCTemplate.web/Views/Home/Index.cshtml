@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVCTemplate.Web.ViewModels.Home.JokeViewModel>
+﻿@model MVCTemplate.Web.ViewModels.Home.IndexViewModel
 @{
     ViewBag.Title = "Home Page";
 }
@@ -10,10 +10,20 @@
 </div>
 
 <div class="row">
-    @foreach (var joke in Model)
+    @foreach (var joke in Model.Jokes)
     {
         <div class="col-md-4">
             @joke.Content
+            <div>@joke.Category</div>
+        </div>
+    }
+</div>
+<div>Nasko</div>
+<div class="row">
+    @foreach (var category in Model.Categories)
+    {
+        <div class="col-md-4">
+            @category.Name
         </div>
     }
 </div>

@@ -2,6 +2,7 @@
 using MVCTemplate.Data;
 using MVCTemplate.Data.Common;
 using MVCTemplate.Data.Model;
+using MVCTemplate.Services.Data;
 using MVCTemplate.Web.Infrastructure.Mapping;
 using MVCTemplate.Web.ViewModels.Home;
 using System;
@@ -13,14 +14,14 @@ namespace MVCTemplate.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private IDbRepository<Joke> jokes;
+        /*private IDbRepository<Joke> jokes;
         private IDbRepository<JokeCategory> jokeCategories;
 
         public HomeController(IDbRepository<Joke> j, IDbRepository<JokeCategory> jk)
         {
             this.jokes = j;
             this.jokeCategories = jk;
-        }
+        }*/
 
         // Poor Man's Dependancy Injection
         /* public HomeController()
@@ -46,6 +47,15 @@ namespace MVCTemplate.Web.Controllers
              this.jokeCategories.Save();
              }*/
 
+        private IJokeService jokes;
+        private ICategoryService jokeCategories;
+
+        public HomeController(IJokeService j, ICategoryService jk)
+        {
+            this.jokes = j;
+            this.jokeCategories = jk;
+        }
+
         public ActionResult Index()
         {
             // Trace.WriteLine("Nasko is in Home "); //Shows info in Glimple Trace bar
@@ -61,9 +71,21 @@ namespace MVCTemplate.Web.Controllers
             //     .Take(3).ProjectTo<JokeViewModel>(AutoMapperConfig.Configuration).ToList();
 
             // Take 3 jokes after makeing IQueriable extensions (overridind ProjectTo from AtoMapper)
-            var jokes3 = this.jokes.All().OrderBy(x => Guid.NewGuid()).Take(3)
+            // var jokes3 = this.jokes.All().OrderBy(x => Guid.NewGuid()).Take(3)
+            // .To<JokeViewModel>().ToList();
+            var joke = this.jokes.GetRandomJokes(3)
                 .To<JokeViewModel>().ToList();
-            return this.View(jokes3);
+
+            var categories = this.jokeCategories.GetAll()
+                .To<JokeCategoryViewModel>().ToList();
+
+            var viewModel = new IndexViewModel
+            {
+                Jokes = joke,
+                Categories = categories
+            };
+
+            return this.View(viewModel);
         }
     }
 }

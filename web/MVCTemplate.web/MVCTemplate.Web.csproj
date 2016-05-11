@@ -202,6 +202,8 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Home\IndexViewModel.cs" />
+    <Compile Include="ViewModels\Home\JokeCategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\JokeViewModel.cs" />
     <Compile Include="ViewModels\Mange\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Mange\ChangePasswordViewModel.cs" />
@@ -289,6 +291,10 @@
     <ProjectReference Include="..\..\data\MVCTemplate.Data\MVCTemplate.Data.csproj">
       <Project>{8b0d2039-91b5-4598-920c-cc7dbd6fd9f2}</Project>
       <Name>MVCTemplate.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\services\MVCTemplate.Services.Data\MVCTemplate.Services.Data.csproj">
+      <Project>{e5fe1f1f-68aa-4008-b73a-02eb044689ca}</Project>
+      <Name>MVCTemplate.Services.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\MVCTemplate.Web.Infrastructure\MVCTemplate.Web.Infrastructure.csproj">
       <Project>{5693d8d9-e6c1-428b-b4a1-63e9b2017628}</Project>

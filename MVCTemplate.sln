@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTemplate.Data.Model", "d
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTemplate.Web.Infrastructure", "web\MVCTemplate.Web.Infrastructure\MVCTemplate.Web.Infrastructure.csproj", "{5693D8D9-E6C1-428B-B4A1-63E9B2017628}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{3D98D109-02AD-4242-9924-E714CFC653AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTemplate.Services.Data", "services\MVCTemplate.Services.Data\MVCTemplate.Services.Data.csproj", "{E5FE1F1F-68AA-4008-B73A-02EB044689CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{5693D8D9-E6C1-428B-B4A1-63E9B2017628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5693D8D9-E6C1-428B-B4A1-63E9B2017628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5693D8D9-E6C1-428B-B4A1-63E9B2017628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5FE1F1F-68AA-4008-B73A-02EB044689CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5FE1F1F-68AA-4008-B73A-02EB044689CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5FE1F1F-68AA-4008-B73A-02EB044689CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5FE1F1F-68AA-4008-B73A-02EB044689CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +61,6 @@ Global
 		{01560F0A-FFBB-4631-B626-79DB0ADE8DD7} = {CC7A43D8-A8F3-4BFA-9491-C57F08C289BD}
 		{B20B31E1-1F43-4D3D-BFFD-AAF61693937C} = {CC7A43D8-A8F3-4BFA-9491-C57F08C289BD}
 		{5693D8D9-E6C1-428B-B4A1-63E9B2017628} = {F65D1BBA-FE08-4C9E-97B2-EB5A1CEF94FB}
+		{E5FE1F1F-68AA-4008-B73A-02EB044689CA} = {3D98D109-02AD-4242-9924-E714CFC653AA}
 	EndGlobalSection
 EndGlobal
