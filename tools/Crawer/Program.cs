@@ -22,6 +22,7 @@
                 var Url = $"http://vicove.com/vic-{i}";
                var doc =  brousingContext.OpenAsync(Url).Result;
                var jokeContent =  doc.QuerySelector("#content_box .post-content").TextContent.Trim();
+
                 if (!string.IsNullOrWhiteSpace(jokeContent))
                 {
                     var categoryName = doc.QuerySelector("#content_box .thecategory a").TextContent.Trim();
