@@ -13,7 +13,7 @@ using static MVCTemplate.Web.App_Start.AutofacConfig;
 
 namespace MVCTemplate.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         /*private IDbRepository<Joke> jokes;
         private IDbRepository<JokeCategory> jokeCategories;
@@ -50,13 +50,11 @@ namespace MVCTemplate.Web.Controllers
 
         private IJokeService jokes;
         private ICategoryService jokeCategories;
-        private IChacheService cacheServicel;
 
-        public HomeController(IJokeService j, ICategoryService jk, IChacheService cacheServ)
+        public HomeController(IJokeService j, ICategoryService jk)
         {
             this.jokes = j;
             this.jokeCategories = jk;
-            this.cacheServicel = cacheServ;
         }
 
         public ActionResult Index()
@@ -79,7 +77,7 @@ namespace MVCTemplate.Web.Controllers
             var joke = this.jokes.GetRandomJokes(3)
                 .To<JokeViewModel>().ToList();
 
-            var categories = this.cacheServicel.Get(
+            var categories = this.Cache.Get(
                 "category",
                 () => this.jokeCategories.GetAll()
                  .To<JokeCategoryViewModel>()
