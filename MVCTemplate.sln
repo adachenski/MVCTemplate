@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{93A45D0F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawer", "tools\Crawer\Crawer.csproj", "{8070BF17-4D23-4DAF-A193-2BF42F731121}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTemplate.Services.Model", "services\MVCTemplate.Services.Model\MVCTemplate.Services.Model.csproj", "{778937F0-7397-430D-A050-BA90AF246124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{8070BF17-4D23-4DAF-A193-2BF42F731121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8070BF17-4D23-4DAF-A193-2BF42F731121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8070BF17-4D23-4DAF-A193-2BF42F731121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{778937F0-7397-430D-A050-BA90AF246124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778937F0-7397-430D-A050-BA90AF246124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778937F0-7397-430D-A050-BA90AF246124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778937F0-7397-430D-A050-BA90AF246124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +77,6 @@ Global
 		{5693D8D9-E6C1-428B-B4A1-63E9B2017628} = {F65D1BBA-FE08-4C9E-97B2-EB5A1CEF94FB}
 		{E5FE1F1F-68AA-4008-B73A-02EB044689CA} = {3D98D109-02AD-4242-9924-E714CFC653AA}
 		{8070BF17-4D23-4DAF-A193-2BF42F731121} = {93A45D0F-060A-42C3-A860-54DCA2BB9C9C}
+		{778937F0-7397-430D-A050-BA90AF246124} = {3D98D109-02AD-4242-9924-E714CFC653AA}
 	EndGlobalSection
 EndGlobal

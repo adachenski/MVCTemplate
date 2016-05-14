@@ -3,6 +3,7 @@ using MVCTemplate.Data;
 using MVCTemplate.Data.Common;
 using MVCTemplate.Data.Model;
 using MVCTemplate.Services.Data;
+using MVCTemplate.Services.Web;
 using MVCTemplate.Web.Infrastructure.Mapping;
 using MVCTemplate.Web.ViewModels.Home;
 using System;
@@ -49,11 +50,13 @@ namespace MVCTemplate.Web.Controllers
 
         private IJokeService jokes;
         private ICategoryService jokeCategories;
+        private IChacheService cacheServicel;
 
-        public HomeController(IJokeService j, ICategoryService jk)
+        public HomeController(IJokeService j, ICategoryService jk, IChacheService cacheServ)
         {
             this.jokes = j;
             this.jokeCategories = jk;
+            this.cacheServicel = cacheServ;
         }
 
         public ActionResult Index()
@@ -76,8 +79,11 @@ namespace MVCTemplate.Web.Controllers
             var joke = this.jokes.GetRandomJokes(3)
                 .To<JokeViewModel>().ToList();
 
-            var categories = this.jokeCategories.GetAll()
-                .To<JokeCategoryViewModel>().ToList();
+            var categories = this.cacheServicel.Get(
+                "category",
+                () => this.jokeCategories.GetAll()
+                 .To<JokeCategoryViewModel>()
+                 .ToList(), 30 * 60);
 
             var viewModel = new IndexViewModel
             {

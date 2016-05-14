@@ -64,10 +64,6 @@
       <HintPath>..\..\packages\Glimpse.1.8.2\lib\net45\Glimpse.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -295,6 +291,14 @@
     <ProjectReference Include="..\..\services\MVCTemplate.Services.Data\MVCTemplate.Services.Data.csproj">
       <Project>{e5fe1f1f-68aa-4008-b73a-02eb044689ca}</Project>
       <Name>MVCTemplate.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\services\MVCTemplate.Services.Model\MVCTemplate.Services.Model.csproj">
+      <Project>{778937f0-7397-430d-a050-ba90af246124}</Project>
+      <Name>MVCTemplate.Services.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\tools\Crawer\Crawer.csproj">
+      <Project>{8070bf17-4d23-4daf-a193-2bf42f731121}</Project>
+      <Name>Crawer</Name>
     </ProjectReference>
     <ProjectReference Include="..\MVCTemplate.Web.Infrastructure\MVCTemplate.Web.Infrastructure.csproj">
       <Project>{5693d8d9-e6c1-428b-b4a1-63e9b2017628}</Project>
