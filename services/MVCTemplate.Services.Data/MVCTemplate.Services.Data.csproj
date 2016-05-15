@@ -55,6 +55,10 @@
       <Project>{b20b31e1-1f43-4d3d-bffd-aaf61693937c}</Project>
       <Name>MVCTemplate.Data.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MVCTemplate.Services.Model\MVCTemplate.Services.Model.csproj">
+      <Project>{778937f0-7397-430d-a050-ba90af246124}</Project>
+      <Name>MVCTemplate.Services.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

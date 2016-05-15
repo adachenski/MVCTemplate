@@ -20,6 +20,11 @@
                 defaults: new { controller = "Questions", action = "Display" });
 
             routes.MapRoute(
+                name: "JokePage",
+                url: "Joke/{id}",
+                defaults: new { controller = "Jokes", action = "ById" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });

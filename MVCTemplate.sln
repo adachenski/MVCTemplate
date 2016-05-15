@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawer", "tools\Crawer\Craw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTemplate.Services.Model", "services\MVCTemplate.Services.Model\MVCTemplate.Services.Model.csproj", "{778937F0-7397-430D-A050-BA90AF246124}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{97C07B16-2A57-43AF-8734-D6D6070C7E22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTemplate.Services.Web.Tests", "tests\MVCTemplate.Services.Web.Tests\MVCTemplate.Services.Web.Tests.csproj", "{E5FB5065-D444-4E0E-AE6C-F85C36069379}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +69,10 @@ Global
 		{778937F0-7397-430D-A050-BA90AF246124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{778937F0-7397-430D-A050-BA90AF246124}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{778937F0-7397-430D-A050-BA90AF246124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5FB5065-D444-4E0E-AE6C-F85C36069379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5FB5065-D444-4E0E-AE6C-F85C36069379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5FB5065-D444-4E0E-AE6C-F85C36069379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5FB5065-D444-4E0E-AE6C-F85C36069379}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,5 +86,6 @@ Global
 		{E5FE1F1F-68AA-4008-B73A-02EB044689CA} = {3D98D109-02AD-4242-9924-E714CFC653AA}
 		{8070BF17-4D23-4DAF-A193-2BF42F731121} = {93A45D0F-060A-42C3-A860-54DCA2BB9C9C}
 		{778937F0-7397-430D-A050-BA90AF246124} = {3D98D109-02AD-4242-9924-E714CFC653AA}
+		{E5FB5065-D444-4E0E-AE6C-F85C36069379} = {97C07B16-2A57-43AF-8734-D6D6070C7E22}
 	EndGlobalSection
 EndGlobal
